@@ -1,0 +1,77 @@
+/*解决底部边框线1px问题*/
+.dd-border-bottom {
+  border-bottom: 0.1rem solid #EEEEEE;
+}
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+  .dd-border-bottom {
+    border-bottom: 0.05rem solid #EEEEEE;
+  }
+}
+@media screen and (-webkit-min-device-pixel-ratio: 3) {
+  .dd-border-bottom {
+    border-bottom: 0.0333333rem solid #EEEEEE;
+  }
+}
+.swiper-image-style {
+  width: 2.08rem;
+  height: 2.08rem;
+  position: relative;
+  top: -0.7rem;
+  left: -0.7rem;
+  z-index: 999;
+}
+.choose_tag {
+  float: left;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+@font-face {
+  font-family: 'iconfont';
+  /* project id 741861 */
+  src: url('//at.alicdn.com/t/font_741861_9jgonwfd909.eot');
+  src: url('//at.alicdn.com/t/font_741861_9jgonwfd909.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_741861_9jgonwfd909.woff') format('woff'), url('//at.alicdn.com/t/font_741861_9jgonwfd909.ttf') format('truetype'), url('//at.alicdn.com/t/font_741861_9jgonwfd909.svg#iconfont') format('svg');
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+.side-column-enter-active {
+  transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  /* Firefox 4 */
+  -webkit-transform: translate3d(0, 0, 0);
+  /* Safari 和 Chrome */
+  -o-transform: translate3d(0, 0, 0);
+  /* Opera */
+}
+.side-column-leave-active {
+  transform: translate3d(30rem, 0, 0);
+  -moz-transform: translate3d(30rem, 0, 0);
+  /* Firefox 4 */
+  -webkit-transform: translate3d(30rem, 0, 0);
+  /* Safari 和 Chrome */
+  -o-transform: translate3d(30rem, 0, 0);
+  /* Opera */
+}
+.side-column-leave-to {
+  transform: translate3d(30rem, 0, 0);
+  -moz-transform: translate3d(30rem, 0, 0);
+  /* Firefox 4 */
+  -webkit-transform: translate3d(30rem, 0, 0);
+  /* Safari 和 Chrome */
+  -o-transform: translate3d(30rem, 0, 0);
+  /* Opera */
+}
+.side-column-enter {
+  transform: translate3d(30rem, 0, 0);
+  -moz-transform: translate3d(30rem, 0, 0);
+  /* Firefox 4 */
+  -webkit-transform: translate3d(30rem, 0, 0);
+  /* Safari 和 Chrome */
+  -o-transform: translate3d(30rem, 0, 0);
+  /* Opera */
+}

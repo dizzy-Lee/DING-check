@@ -1,0 +1,237 @@
+{
+    "studentLatelyData": {
+        "user_id": "10086",
+        "user_img": "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=16550438,2220103346&fm=27&gp=0.jpg",
+        "user_name": "懂假壕",
+        "type": "超神",
+        "homework_label": ["做的还扣以", "有些BUG地方没改过来", "代码整洁", "注释明确"],
+        "tutor_comment": "你应该重新巩固一下变成的基础知识，基础不牢的确容易出现很多不必要的错误",
+        "count": 4,
+        "is_acceptance": true,
+        "time": "2018 / 07 / 11",
+        "have_acceptance": true
+    },
+    "ok": true,
+    "teacherDetail": [{
+            "date": " 2018 / 07 / 09",
+            "detail": [{
+                "count": 1,
+                "chaoshen": 8,
+                "youxiu": 4,
+                "zhongdeng": 2,
+                "chajin": 1,
+                "dakeng": 0,
+                "weijiao": 0
+            }, {
+                "count": 2,
+                "chaoshen": 3,
+                "youxiu": 7,
+                "zhongdeng": 3,
+                "chajin": 1,
+                "dakeng": 0,
+                "weijiao": 1
+            }]
+
+        },
+        {
+            "date": " 2018 / 07 / 10",
+            "detail": [{
+                "count": 1,
+                "chaoshen": 8,
+                "youxiu": 4,
+                "zhongdeng": 2,
+                "chajin": 1,
+                "dakeng": 0,
+                "weijiao": 0
+            }, {
+                "count": 2,
+                "chaoshen": 3,
+                "youxiu": 7,
+                "zhongdeng": 3,
+                "chajin": 1,
+                "dakeng": 0,
+                "weijiao": 1
+            }]
+
+        }
+    ],
+    "aaaa": [{
+            "date": "2018 / 07 / 12",
+            "detail": [{
+                    "tutor": "1129613523758071",
+                    "studentID": "523103604858277 ",
+                    "acceptance": "true",
+                    "date": "2018 / 07 / 12",
+                    "frequency": "1",
+                    "evaluate": "大坑",
+                    "quickEvaluate": "Fuck,韩红看了想打人",
+                    "otherEvaluate": "123"
+                },
+                {
+                    "tutor": "1129613523758071",
+                    "studentID": "523103604858277 ",
+                    "acceptance": "true",
+                    "date": "2018 / 07 / 12",
+                    "frequency": "1",
+                    "evaluate": "大坑",
+                    "quickEvaluate": "Fuck,韩红看了想打人",
+                    "otherEvaluate": "1234"
+                },
+                {
+                    "tutor": "1129613523758071",
+                    "studentID": "523103604858277 ",
+                    "acceptance": "true",
+                    "date": "2018 / 07 / 12",
+                    "frequency": "1",
+                    "evaluate": "差劲",
+                    "quickEvaluate": "Fuck,韩红看了想打人",
+                    "otherEvaluate": "1234"
+                },
+                {
+                    "tutor": "1129613523758071",
+                    "studentID": "523103604858277 ",
+                    "acceptance": "true",
+                    "date": "2018 / 07 / 12",
+                    "frequency": "2",
+                    "evaluate": "差劲",
+                    "quickEvaluate": "Fuck,韩红看了想打人",
+                    "otherEvaluate": "斯索斯"
+                },
+                {
+                    "tutor": "1129613523758071",
+                    "studentID": "523103604858277 ",
+                    "acceptance": "true",
+                    "date": "2018 / 07 / 12",
+                    "frequency": "2",
+                    "evaluate": "未交",
+                    "quickEvaluate": "Fuck,韩红看了想打人",
+                    "otherEvaluate": "斯索斯"
+                },
+                {
+                    "tutor": "1129613523758071",
+                    "studentID": "523103604858277 ",
+                    "acceptance": "true",
+                    "date": "2018 / 07 / 12",
+                    "frequency": "2",
+                    "evaluate": "优秀",
+                    "quickEvaluate": "Fuck,韩红看了想打人",
+                    "otherEvaluate": "斯索斯"
+                },
+                {
+                    "tutor": "1129613523758071",
+                    "studentID": "523103604858277 ",
+                    "acceptance": "true",
+                    "date": "2018 / 07 / 12",
+                    "frequency": "2",
+                    "evaluate": "未交",
+                    "quickEvaluate": "Fuck,韩红看了想打人",
+                    "otherEvaluate": "斯索斯"
+                },
+                {
+                    "tutor": "1129613523758071",
+                    "studentID": "523103604858277 ",
+                    "acceptance": "true",
+                    "date": "2018 / 07 / 12",
+                    "frequency": "2",
+                    "evaluate": "超神",
+                    "quickEvaluate": "Fuck,韩红看了想打人",
+                    "otherEvaluate": "斯索斯"
+                }, {
+                    "tutor": "1129613523758071",
+                    "studentID": "523103604858277 ",
+                    "acceptance": "true",
+                    "date": "2018 / 07 / 12",
+                    "frequency": "2",
+                    "evaluate": "中等",
+                    "quickEvaluate": "Fuck,韩红看了想打人",
+                    "otherEvaluate": "斯索斯"
+                }, {
+                    "tutor": "1129613523758071",
+                    "studentID": "523103604858277 ",
+                    "acceptance": "true",
+                    "date": "2018 / 07 / 12",
+                    "frequency": "2",
+                    "evaluate": "中等",
+                    "quickEvaluate": "Fuck,韩红看了想打人",
+                    "otherEvaluate": "斯索斯"
+                }
+            ]
+        },
+        {
+            "date": "2018 / 07 / 13",
+            "detail": [{
+                    "tutor": "1129613523758071",
+                    "studentID": "523103604858277 ",
+                    "acceptance": "true",
+                    "date": "2018 / 07 / 12",
+                    "frequency": "1",
+                    "evaluate": "优秀",
+                    "quickEvaluate": "Fuck,韩红看了想打人",
+                    "otherEvaluate": "斯索斯"
+                },
+                {
+                    "tutor": "1129613523758071",
+                    "studentID": "523103604858277 ",
+                    "acceptance": "true",
+                    "date": "2018 / 07 / 12",
+                    "frequency": "2",
+                    "evaluate": "中等",
+                    "quickEvaluate": "Fuck,韩红看了想打人",
+                    "otherEvaluate": "斯索斯"
+                },
+                {
+                    "tutor": "1129613523758071",
+                    "studentID": "523103604858277 ",
+                    "acceptance": "true",
+                    "date": "2018 / 07 / 12",
+                    "frequency": "2",
+                    "evaluate": "超神",
+                    "quickEvaluate": "Fuck,韩红看了想打人",
+                    "otherEvaluate": "斯索斯"
+                },
+                {
+                    "tutor": "1129613523758071",
+                    "studentID": "523103604858277 ",
+                    "acceptance": "true",
+                    "date": "2018 / 07 / 12",
+                    "frequency": "1",
+                    "evaluate": "优秀",
+                    "quickEvaluate": "Fuck,韩红看了想打人",
+                    "otherEvaluate": "斯索斯"
+                },
+                {
+                    "tutor": "1129613523758071",
+                    "studentID": "523103604858277 ",
+                    "acceptance": "true",
+                    "date": "2018 / 07 / 12",
+                    "frequency": "1",
+                    "evaluate": "中等",
+                    "quickEvaluate": "Fuck,韩红看了想打人",
+                    "otherEvaluate": "斯索斯"
+                },
+                {
+                    "tutor": "1129613523758071",
+                    "studentID": "523103604858277 ",
+                    "acceptance": "true",
+                    "date": "2018 / 07 / 12",
+                    "frequency": "2",
+                    "evaluate": "未交",
+                    "quickEvaluate": "Fuck,韩红看了想打人",
+                    "otherEvaluate": "斯索斯"
+                }, {
+                    "tutor": "1129613523758071",
+                    "studentID": "523103604858277 ",
+                    "acceptance": "true",
+                    "date": "2018 / 07 / 12",
+                    "frequency": "2",
+                    "evaluate": "大坑",
+                    "quickEvaluate": "Fuck,韩红看了想打人",
+                    "otherEvaluate": "斯索斯"
+                }
+
+            ]
+        }
+    ]
+
+
+}
