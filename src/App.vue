@@ -24,38 +24,38 @@ export default {
     dingdingTalk() {
       var that = this;
       dd.ready(() => {
+        // 183680520 应用ID
         dd.runtime.permission.requestAuthCode({
           corpId: "dingf5bdfda1379fc0f135c2f4657eb6378f",
           onSuccess(res) {
             axios
-              .post("/api/dd/user", {
+              .post("dd/user", {
                 getData: true,
                 code: res.code
               })
               .then(resp => {
                 that.$store.commit("getUserInfo", resp.data);
-
-                switch (resp.data.job) {
-                  case "学生":
-                    that.$router.push("/studentPage");
-                    that.$refs.loading_view_Home = false;
-                    break;
-                  case "教师":
-                    that.$router.push("/teacherPage");
-                    that.$refs.loading_view_Home = false;
-                    break;
-                  case "助教":
-                    that.$router.push("/totur");
-                    that.$refs.loading_view_Home = false;
-                    break;
-                }
+          
+                 switch (resp.data.job) {
+                    case "学生":
+                      that.$router.push("/studentPage");
+                      that.$refs.loading_view_Home = false;
+                      break;
+                    case "教师":
+                      that.$router.push("/teacherPage");
+                      that.$refs.loading_view_Home = false;
+                      break;
+                    case "助教":
+                      that.$router.push("/totur");
+                      that.$refs.loading_view_Home = false;
+                      break;
+                  }
               });
           },
           onFail: function(err) {
             alert(err);
           }
         });
-        
       });
     }
   },

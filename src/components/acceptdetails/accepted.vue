@@ -38,7 +38,7 @@ export default {
   methods: {
     getData() {
       axios
-        .post("/api/tutor-load-clickyes", {
+        .post("tutor-load-clickyes", {
           getData: true,
           tutor_id: this.$store.state.ID,
           date: this.$store.state.date,

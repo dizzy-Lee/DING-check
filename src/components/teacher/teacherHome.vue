@@ -6,10 +6,15 @@
      <div style="position:absolute;overflow: hidden;top:3.5rem;bottom:0rem;margin:0 auto;width: 100%;" ref="teacher_wrapper_1">
       <div style="margin:0 auto;">
     <div class="user-info" @click="addReq">
-       <img class="user-img" :src="this.$store.state.IMG" alt="">
+       <img class="user-img" :src="this.$store.state.IMG" alt="" v-if="this.$store.state.IMG!=''">
+       <!-- <div class="user-img" style="background-color:#3296FA;"  v-if="this.$store.state.IMG==''">
+          <span style="color:#fff;font-size:1.2rem;line-height:4rem;">{{rexName(this.$store.state.NAME)}}</span>
+       </div> -->
        <div class="user-name">{{this.$store.state.NAME}}</div>
-       <v-button type="primary" style="margin-top:0.5rem;" @click.native="exportExcel">导出表</v-button>
+       <!-- <v-button type="primary" style="margin-top:0.5rem;" @click.native="exportExcel" id="Copybtn">导出表</v-button> -->
+       <div v-show="true"  id="target" ref="targetDiv"></div>
     </div>
+
         <statistics :detailData="this.$store.state.teacherShow"></statistics>
       </div>
      </div>
@@ -34,7 +39,8 @@ import main from "../../assets/js/main.js";
 import teacherDetail from "./teacherDetail";
 import teacherStudent from "./teacherStudent";
 import assess from "./assess";
-//格式化数据结构
+
+
 
 export default {
   components: {
@@ -50,21 +56,26 @@ export default {
       isShowTeacherDetail: false,
       isShowTeacherStudent: false,
       isShowAssess: false,
-      code: ''
+      code: ""
     };
   },
   methods: {
+    rexName(name){
+      return name.substring(name.length - 2, 3);
+    },
     //导出Excel表,
-    exportExcel(){
-    
-      axios.post("/api/excel",{
-        getData:true,
-        teacher_id:this.$store.state.ID,
-        date:this.getTimes(5)
-      }).then(res=>{
-        // alert(JSON.stringify(res.data))
-        window.location.href = `http://10.2.5.1:3000/${res.dara}`;
-      })
+    exportExcel() {
+      axios
+        .post("excel", {
+          getData: true,
+          teacher_id: this.$store.state.ID,
+          date: this.getTimes(5)
+        })
+        .then(res => {
+          var str1 = `http:/10.2.5.1:3000/${res.data}`;
+          let that = this;
+          
+        });
     },
     _infoBscroll() {
       this.$nextTick(() => {
@@ -76,16 +87,14 @@ export default {
     },
     //获取统计数据
     _getInfoData() {
-      
       axios
-        .post("/api/teacher-load-index", {
+        .post("teacher-load-index", {
           teacher_id: this.$store.state.ID,
           getData: true
         })
         .then(res => {
           // this.data = res.data.reverse();
           this.data = main.formatData(res.data);
-         
 
           this.$store.commit("getInfoData", this.data); //发送到Vuex里面存储
 
@@ -96,14 +105,12 @@ export default {
           this.$refs.loading_view_2.isShowLoading = false;
         });
     },
-    
-    addReq() {},
+
+    addReq() {}
   },
   created() {
     this._infoBscroll();
     this._getInfoData();
-   
-   
   }
 };
 </script>
@@ -130,7 +137,9 @@ export default {
     // padding: 0rem 8.25rem;
     text-align: center;
     .user-img {
+        margin:0 auto;
       margin-top: 2rem;
+      text-align: center;
       width: 4rem;
       height: 4rem;
       border-radius: 50%;

@@ -12,7 +12,7 @@ module.exports = {
         assetsPublicPath: '/',
         proxyTable: { //將api路徑名替換成static/mock路徑名！！！！！！！方便 隱秘 10.205.33.171
             '/api': {
-                target: 'http://10.2.5.1:3000',
+                target: 'http://192.168.43.209:3000',
                 pathRewrite: {
                     '^/api': ''
                 }

@@ -6,7 +6,7 @@
       <span style="padding:1rem;line-height:1.5rem;position:absolute;left:0;margin-left:0.5rem;" class="iconfont" @click="goAcceptdetails">&#xe600;</span>
       <span class="title">作业评价</span>
       <router-link to="/assess">
-        <span style="position:absolute;right:1rem;line-height:3.5rem;font-family: PingFangSC-Regular;font-size: 16px;color: #212121;text-align: center;">编辑</span>
+        <span style="position:absolute;right:1rem;line-height:3.5rem;font-family: PingFangSC-Regular;font-size: 16px;color: #212121;text-align: center;" @click="changeData">编辑</span>
       </router-link>
     </div>
     <!-- 验收时间 -->
@@ -85,6 +85,12 @@ export default {
     };
   },
   methods: {
+    changeData() {
+      this.$store.commit('changeData', {
+        avatar:this.$store.state.studentDetail.avatar,
+        studentID:this.$store.state.studentDetail.studentID,
+        name:this.$store.state.studentDetail.name})
+    },
     //判断等级类型 进行选择图片,
     isSrcType(type) {
       switch (type) {
@@ -153,7 +159,7 @@ export default {
     _getStudentLatelyData() {
       this.$nextTick(() => {
         axios
-          .post("/api/student-load-index", {
+          .post("student-load-index", {
             getData: true,
             student_id: "523103604858277",
             time: '2018 / 07 / 13'
@@ -177,7 +183,7 @@ export default {
               this.$refs.loading_view.isShowLoading = false;
             }
           });
-        // axios.get("/api/data.json").then(res => {
+        // axios.get("data.json").then(res => {
         //   if (res.data.ok) {
         //     this.$store.commit("infoStudentShow",res.data.studentLatelyData);
         //     this.$refs.loading_view.isShowLoading = false;

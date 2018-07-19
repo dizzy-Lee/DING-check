@@ -90,7 +90,7 @@ export default {
       ]);
 
       axios
-        .post("/api/teacher-load-click", {
+        .post("teacher-load-click", {
           getData: true,
           teacher_id: this.$store.state.ID,
           date: items.date,
@@ -101,7 +101,7 @@ export default {
           var data = res.data.detail;
 
           axios
-            .post("/api/dd/student", {
+            .post("dd/student", {
               getData: true,
               userID: this.$store.state.ID
             })
@@ -121,6 +121,10 @@ export default {
                         res.data.detail[j].img =
                           request.data.userlist[i].avatar;
                         res.data.detail[j].name = request.data.userlist[i].name;
+                        if (res.data.detail[j].img == "") {
+                          res.data.detail[j].img =
+                            "../../../static/img/蕉迟但到.jpg";
+                        }
                       }
                       if (
                         request.data.userlist[i].userid ==
@@ -136,44 +140,42 @@ export default {
                         }
                       }
                     }
-                  } 
+                  }
                 }
               }
               for (let i = 0; i < request.data.userlist.length; i++) {
                 for (let j = 0; j < res.data.detail.length; j++) {
                   if (res.data.detail[j].acceptance == false) {
-                    for(let k = 0;k<res.data.detail[j].student.length;k++){
-                      if(res.data.detail[j].tutor==request.data.userlist[i].userid){
-                         res.data.detail[j].img = request.data.userlist[i].avatar;
+                    for (
+                      let k = 0;
+                      k < res.data.detail[j].student.length;
+                      k++
+                    ) {
+                      if (
+                        res.data.detail[j].tutor ==
+                        request.data.userlist[i].userid
+                      ) {
+                        res.data.detail[j].img =
+                          request.data.userlist[i].avatar;
                         res.data.detail[j].name = request.data.userlist[i].name;
                       }
-                      if(res.data.detail[j].student[k].student==request.data.userlist[i].userid){
-                        res.data.detail[j].student[k].img = request.data.userlist[i].avatar;
-                         res.data.detail[j].student[k].name = request.data.userlist[i].name;
-                         if(res.data.detail[j].student[k].img == ""){
-                            res.data.detail[j].student[k].img = "../../../../static/img/蕉迟但到.jpg";
-                         }
+                      if (
+                        res.data.detail[j].student[k].student ==
+                        request.data.userlist[i].userid
+                      ) {
+                        res.data.detail[j].student[k].img =
+                          request.data.userlist[i].avatar;
+                        res.data.detail[j].student[k].name =
+                          request.data.userlist[i].name;
+                        if (res.data.detail[j].student[k].img == "") {
+                          res.data.detail[j].student[k].img =
+                            "../../../../static/img/蕉迟但到.jpg";
+                        }
                       }
                     }
-                  } 
+                  }
                 }
               }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
               this.$store.commit("getTeacher_Detail", res.data.detail);
               this.$parent.$refs.loading_view_2.isShowLoading = false;
@@ -187,7 +189,7 @@ export default {
     //请求管理的用户头像 名称等内容信息,
     getTeacherGuanUser(data) {
       axios
-        .post("/api/dd/student", {
+        .post("dd/student", {
           getData: true,
           userID: this.$store.state.ID
         })
@@ -219,6 +221,7 @@ export default {
 <style lang="less" scoped>
 @import "../../../assets/style/main.less";
 .common-statistics {
+  margin-top:-3rem;/* 临时决策*/
   .statistics-list {
     .statistics-item-time {
       font-family: PingFangSC-Regular;

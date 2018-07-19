@@ -12,7 +12,7 @@
    
         <div class="reception-time">
           <div class="time">{{this.$store.state.studentHomeShow.time}}</div>
-          <div class="reception-count">第 <span>{{this.$store.state.studentHomeShow.count}}</span> 次验收</div>
+          <div class="reception-count" v-if="this.$store.state.studentHomeShow.count!=''">第 <span>{{this.$store.state.studentHomeShow.count}}</span> 次验收</div>
         </div>
         <!-- 如果当天没有留助教验收作业 通过作业状态来判断-->
         <div class="no-img" v-if="!this.$store.state.studentHomeShow.have_acceptance">
@@ -150,7 +150,7 @@ export default {
     handleLookHistory() {
       this.$refs.loading_view.isShowLoading = true;
       axios
-        .post("/api/student-load-history", {
+        .post("student-load-history", {
           getData: true,
           student_id: this.$store.state.ID
         })
@@ -175,7 +175,7 @@ export default {
     _getStudentLatelyData() {
       this.$nextTick(() => {
         axios
-          .post("/api/student-load-index", {
+          .post("student-load-index", {
             getData: true,
             student_id: this.$store.state.ID
             ,

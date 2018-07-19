@@ -58,7 +58,7 @@
         <v-tag class="choose_tag">继续努力</v-tag>
         <v-tag class="choose_tag">Fuck</v-tag>
         <v-tag class="choose_tag">韩红看了想打人</v-tag>
-        <v-tag class="choose_tag">+</v-tag>
+        <!-- <v-tag class="choose_tag">+</v-tag> -->
       </div>
     </div>
     <div class="home_assess">
@@ -243,7 +243,7 @@ export default {
       this.homework_lable = arr.join(",");
 
       axios
-        .post("/api/teacher-ins-submit", {
+        .post("teacher-ins-submit", {
           time: this.time,
           totur_id: this.$store.state.teacher_Student_Detail.tutor,
           student_id: this.$store.state.teacher_Student_Detail.studentID,
@@ -260,7 +260,7 @@ export default {
             this.goAcceptdetails(); //返回
             this.$parent._getInfoData();
             axios
-              .post("/api/teacher-load-click", {
+              .post("teacher-load-click", {
                 getData: true,
                 teacher_id: this.$store.state.ID,
                 date: this.$store.state.teacherDetail[0],
@@ -270,7 +270,7 @@ export default {
                 console.log(res.data.detail);
                 var data = res.data.detail;
                 axios
-                  .post("/api/dd/student", {
+                  .post("dd/student", {
                     getData: true,
                     userID: this.$store.state.ID
                   })

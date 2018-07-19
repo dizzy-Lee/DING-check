@@ -116,7 +116,7 @@ export default {
       //   have_acceptance: true
       // };
       axios
-        .post("/api/student-load-query", {
+        .post("student-load-query", {
           getData: true,
           student_id: this.$store.state.ID,
           date: items.date,

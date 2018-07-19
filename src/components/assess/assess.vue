@@ -58,7 +58,7 @@
         <v-tag class="choose_tag">继续努力</v-tag>
         <v-tag class="choose_tag">Fuck</v-tag>
         <v-tag class="choose_tag">韩红看了想打人</v-tag>
-        <v-tag class="choose_tag">+</v-tag>
+        <!-- <v-tag class="choose_tag">+</v-tag> -->
       </div>
     </div>
     <div class="home_assess">
@@ -252,7 +252,7 @@ export default {
         onFail: function() {}
       });
       axios
-        .post("/api/tutor-ins-submit?t = " + new Date().getTime(), {
+        .post("tutor-ins-submit?t = " + new Date().getTime(), {
           time: this.time,
           totur_id: this.$store.state.ID,
           student_id: this.$store.state.studentId.replace(/\s+/g, ""),

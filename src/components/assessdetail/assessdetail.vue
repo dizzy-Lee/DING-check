@@ -138,7 +138,7 @@ export default {
     //模拟后台数据获取
     _getStudentLatelyData() {
       this.$nextTick(() => {
-        // axios.post("/api/load-index",{
+        // axios.post("load-index",{
         //   getData:true,
         //   student_id:"523103604858277",
         //   time:this.getTimes(5)
@@ -154,7 +154,7 @@ export default {
         //     this.$refs.loading_view.isShowLoading = false;
         //   }
         // });
-        // axios.get("/api/data.json").then(res => {
+        // axios.get("data.json").then(res => {
         //   if (res.data.ok) {
         //     this.$store.commit("infoStudentShow",res.data.studentLatelyData);
         //     this.$refs.loading_view.isShowLoading = false;

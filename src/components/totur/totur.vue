@@ -11,7 +11,7 @@
         <v-button type="primary" @click="newAccept">新建验收</v-button>
       </div>
         <statistics
-          :data="data"
+          :data="this.$store.state.studentHomeData"
           :studentData="studentData"
         >
         </statistics>
@@ -53,7 +53,7 @@ export default {
   methods: {
     postStudentData() {
       axios
-        .post("api/dd/student", {
+        .post("dd/student", {
           getData: true,
           userID: this.$store.state.ID
         })
@@ -67,13 +67,14 @@ export default {
     },
     _getInfoData() {
       axios
-        .post("/api/tutor-load-index", {
+        .post("tutor-load-index", {
           getData: true,
           tutor_id: this.$store.state.ID,
         })
         .then(res => {
           // console.log("转化前", res.data);
-          this.data = main.formatData(res.data);
+          this.data = main.formatData(res.data)
+          this.$store.commit('pushStudentHomeData',main.formatData(res.data))
           // console.log("转化后", this.data);
         });
       
@@ -89,21 +90,23 @@ export default {
         this.clickSwitch = '1';
         setTimeout('this.changeClickSwitch()',300000);
         this.time = this.getTimes(5);
+         
         this.getTime();
+       
         axios
-          .post("/api/tutor-ins-newAcceptance", {
+          .post("tutor-ins-newAcceptance", {
             time: this.time,
             tutor_id: this.$store.state.ID,
             count: this.count
           })
           .then(response => {
             console.log(response); //路由跳转到首页
-            this.$forceUpdate();
+            // this.$forceUpdate();
           })
           .catch(error => {
             console.log(error);
           });
-      this._getInfoData();
+     this._getInfoData();
       // history.go(0)
       } else {
         this.youth.toast("你点的太快了，请过五分钟再试！",true);
@@ -116,10 +119,10 @@ export default {
           // console.log('总长度',this.data[i].detail_1.length)
           if (this.data[i].detail_1.length == 0) {
             this.count = 1;
-             console.log(this.count)
+
           } else {
             this.count = this.data[i].detail_1.length + 1;
-            console.log(this.count)
+       
           }
         }
       }

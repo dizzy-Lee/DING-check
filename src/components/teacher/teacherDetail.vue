@@ -38,7 +38,7 @@
             </div>
         </div>
          <!-- 未创建验收的 -->
-         <div v-show="this.$store.state.teacher_Detail_2.length!=0">
+         <div v-show="this.$store.state.teacher_Detail_2 === undefined || this.$store.state.teacher_Detail_2.length == 0">
          <div class="no-item">未创建验收的</div>
           <div class="no-item-div">
             <div class="" v-for="(items,index) in this.$store.state.teacher_Detail_2" :key="index">

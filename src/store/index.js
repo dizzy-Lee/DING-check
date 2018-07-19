@@ -26,6 +26,7 @@ export default new Vuex.Store({
         studentDetail: [],
         studentImg: '',
         studentName: '',
+        studentHomeData: [],
         //张晗雨修改后
         studentHomeShow: {},
         teacherShow: {},
@@ -53,6 +54,10 @@ export default new Vuex.Store({
         }
     },
     mutations: {
+        //助教端首页数据
+        pushStudentHomeData(store, data) {
+            store.studentHomeData = data
+        },
         //存储钉钉数据
         pushStudentData(store, data) {
             store.studentData = data;
@@ -63,7 +68,10 @@ export default new Vuex.Store({
 
             store.ID = data.userid;
             store.NAME = data.name;
-            store.IMG = data.avatar;
+            // if (data.avatar != "") {
+            //     store.IMG = data.avatar;
+            // }
+            store.IMG = data.avatar
 
 
         },
@@ -119,7 +127,7 @@ export default new Vuex.Store({
                 return;
             }
             Vue.set(store.teacherDetail, 1, store.teacherDetail[1] - data);
-            axios.post("/api/teacher-load-click", {
+            axios.post("teacher-load-click", {
                 getData: true,
                 teacher_id: store.ID,
                 date: store.teacherDetail[0],
@@ -129,7 +137,7 @@ export default new Vuex.Store({
                 console.log(res.data.detail);
                 var data = res.data.detail;
                 axios
-                    .post("/api/dd/student", {
+                    .post("dd/student", {
                         getData: true,
                         userID: store.ID
                     })
@@ -179,7 +187,7 @@ export default new Vuex.Store({
                                             res.data.detail[j].student[k].img = request.data.userlist[i].avatar;
                                             res.data.detail[j].student[k].name = request.data.userlist[i].name;
                                             if (res.data.detail[j].student[k].img == "") {
-                                                res.data.detail[j].student[k].img = "../../../../static/img/蕉迟但到.jpg";
+                                                res.data.detail[j].student[k].img = "../../static/img/蕉迟但到.jpg";
                                             }
                                         }
                                     }
@@ -227,7 +235,7 @@ export default new Vuex.Store({
             }
             Vue.set(store.teacherDetail, 1, store.teacherDetail[1] + data);
             console.log(store.teacherDetail[1])
-            axios.post("/api/teacher-load-click", {
+            axios.post("teacher-load-click", {
                 getData: true,
                 teacher_id: store.ID,
                 date: store.teacherDetail[0],
@@ -236,7 +244,7 @@ export default new Vuex.Store({
                 console.log(res.data.detail);
                 var data = res.data.detail;
                 axios
-                    .post("/api/dd/student", {
+                    .post("dd/student", {
                         getData: true,
                         userID: store.ID
                     })
@@ -287,7 +295,7 @@ export default new Vuex.Store({
                                             res.data.detail[j].student[k].img = request.data.userlist[i].avatar;
                                             res.data.detail[j].student[k].name = request.data.userlist[i].name;
                                             if (res.data.detail[j].student[k].img == "") {
-                                                res.data.detail[j].student[k].img = "../../../../static/img/蕉迟但到.jpg";
+                                                res.data.detail[j].student[k].img = "../../static/img/蕉迟但到.jpg";
                                             }
                                         }
                                     }
@@ -353,6 +361,11 @@ export default new Vuex.Store({
             if (state.studentDetail.quickEvaluate != null) {
                 state.studentDetail.quickEvaluate = state.studentDetail.quickEvaluate.split(',')
             }
-        }
+        },
+        changeData(state, student_name) {
+            state.studentId = student_name.studentID
+            state.studentName = student_name.name
+            state.studentImg = student_name.avatar
+        },
     },
 })

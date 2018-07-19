@@ -156,7 +156,7 @@ export default {
     _getStudentLatelyData() {
       this.$nextTick(() => {
         axios
-          .post("/api/student-load-index", {
+          .post("student-load-index", {
             getData: true,
             student_id: "523103604858277",
             time: '2018 / 07 / 13'

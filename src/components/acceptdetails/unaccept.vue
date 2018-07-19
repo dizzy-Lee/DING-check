@@ -34,7 +34,7 @@ export default {
     },
     getData() {
       axios
-        .post("/api/tutor-load-clickno", {
+        .post("tutor-load-clickno", {
           getData: true,
           tutor_id: this.$store.state.ID,
           date: this.$store.state.date,
@@ -54,7 +54,7 @@ export default {
               }
             }
           }
-          // alert(this.student_data[0].studentID)
+         
         });
     },
     goAssess () {
